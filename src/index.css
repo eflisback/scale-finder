@@ -5,6 +5,8 @@
 
   --primary-color: #e8e9eb;
   --background-color: #101010;
+  --spotify-color: #1db954;
+
   --size-large: 50px;
   --size-medium: 25px;
   --size-small: 15px;
@@ -22,11 +24,14 @@ body {
 }
 
 main {
-  margin: 25px 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 main > * {
-  padding: 0 50px;
+  padding: 0 200px;
   margin-bottom: 25px;
 }
 

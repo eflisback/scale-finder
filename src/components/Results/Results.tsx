@@ -7,11 +7,17 @@ interface IProps {
 export default function Results({ matchingScales }: IProps) {
   return (
     <div className={styles.results}>
-      {matchingScales.map((scale, index) => (
-        <div key={index} className={styles.scale}>
-          {scale.annotation} {scale.type.name}
-        </div>
-      ))}
+      <div className={styles.scales}>
+        {matchingScales.length !== 0 ? (
+          matchingScales.map((scale, index) => (
+            <div key={index} className={styles.scale}>
+              {scale.annotation} {scale.type.name}
+            </div>
+          ))
+        ) : (
+          <span className={styles.noMatches}>No matches found</span>
+        )}
+      </div>
     </div>
   );
 }
