@@ -17,16 +17,21 @@ function getNoteValue(annotation: string): number {
 export default function NoteEntry({ setNotes }: IProps) {
   const [annotations, setAnnotations] = useState<string[]>(Array(7).fill(""));
 
-  const handleInputChange = (index: number, value: string) => {
+  function handleInputChange(index: number, value: string) {
+    const capitalizedValue =
+      value.length > 0
+        ? value.charAt(0).toUpperCase() + value.slice(1).toLowerCase()
+        : value;
+
     const newAnnotations = [...annotations];
-    newAnnotations[index] = value;
+    newAnnotations[index] = capitalizedValue;
     setAnnotations(newAnnotations);
 
     const noteValues = new Set(
       newAnnotations.map(getNoteValue).filter((value) => value !== -1)
     );
     setNotes(Array.from(noteValues));
-  };
+  }
 
   return (
     <div>
