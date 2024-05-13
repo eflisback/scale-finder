@@ -38,3 +38,13 @@ main > * {
 main > *:last-child {
   margin-bottom: 0;
 }
+
+h3 {
+  width: 100%;
+}
+
+h3 svg {
+  position: relative;
+  top: 2px;
+  margin-right: 5px;
+}

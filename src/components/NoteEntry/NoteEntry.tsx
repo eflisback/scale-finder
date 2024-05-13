@@ -2,6 +2,7 @@ import styles from "./NoteEntry.module.css";
 
 import { useState } from "react";
 import { getNoteValue } from "../../util/translateNotes";
+import { IoIosMusicalNotes } from "react-icons/io";
 
 interface IProps {
   setNotes: React.Dispatch<React.SetStateAction<number[]>>;
@@ -30,18 +31,24 @@ export default function NoteEntry({ setNotes }: IProps) {
 
   return (
     <div className={styles.noteEntry}>
-      <span>Enter</span>
-      {annotations.map((annotation, index) => (
-        <input
-          autoFocus={index === 0}
-          key={index}
-          value={annotation}
-          onChange={(e) => handleInputChange(index, e.target.value)}
-          placeholder={placeholders[index]}
-          maxLength={2}
-          tabIndex={index + 1}
-        />
-      ))}
+      <h3>
+        <IoIosMusicalNotes />
+        Note input
+      </h3>
+      <div className={styles.inputs}>
+        {annotations.map((annotation, index) => (
+          <input
+            autoFocus={index === 0}
+            key={index}
+            value={annotation}
+            onChange={(e) => handleInputChange(index, e.target.value)}
+            placeholder={placeholders[index]}
+            size={2}
+            maxLength={2}
+            tabIndex={index + 1}
+          />
+        ))}
+      </div>
     </div>
   );
 }
