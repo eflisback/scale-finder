@@ -1,17 +1,8 @@
 import { useState } from "react";
-import { notes } from "../../variables";
+import { getNoteValue } from "../../util/translateNotes";
 
 interface IProps {
   setNotes: React.Dispatch<React.SetStateAction<number[]>>;
-}
-
-function getNoteValue(annotation: string): number {
-  for (let index = 0; index < notes.length; index++) {
-    if (notes[index].includes(annotation)) {
-      return index;
-    }
-  }
-  return -1;
 }
 
 export default function NoteEntry({ setNotes }: IProps) {
