@@ -22,6 +22,9 @@ function App() {
       <Header />
       <NoteEntry setNotes={setNotes} />
       <Results matchingScales={matchingScales} />
+      {notes.map((note) => (
+        <div key={note}>{note}</div>
+      ))}
       <Footer />
     </main>
   );
