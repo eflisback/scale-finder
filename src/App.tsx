@@ -7,7 +7,7 @@ import NoteEntry from "./components/NoteEntry/NoteEntry";
 import Results from "./components/Results/Results";
 import Footer from "./components/Footer/Footer";
 
-const scaleSequences: ScaleType[] = [
+const scaleTypes: ScaleType[] = [
   {
     name: "Major",
     sequence: [2, 2, 1, 2, 2, 2, 1],
@@ -20,7 +20,7 @@ const scaleSequences: ScaleType[] = [
 
 function generateScale(startNote: number, sequence: number[]): number[] {
   return sequence.reduce(
-    (scale, interval) => [...scale, (scale[scale.length - 1] + interval) % 12],
+    (acc, num) => [...acc, (acc.slice(-1)[0] + num) % 12],
     [startNote]
   );
 }
@@ -29,16 +29,13 @@ function getMatchingScales(notes: number[]): Scale[] {
   const scales: Scale[] = [];
 
   for (let i = 0; i < 12; i++) {
-    for (const scaleSequence of scaleSequences) {
-      const scale = generateScale(i, scaleSequence.sequence);
+    for (const scaleType of scaleTypes) {
+      const scale = generateScale(i, scaleType.sequence);
 
       if (notes.every((note) => scale.includes(note))) {
         scales.push({
           annotation: getNoteAnnotation(i),
-          type: {
-            name: scaleSequence.name,
-            sequence: scaleSequence.sequence,
-          },
+          type: scaleType,
         });
       }
     }
@@ -58,9 +55,6 @@ function App() {
       <Header />
       <NoteEntry setNotes={setNotes} />
       <Results matchingScales={matchingScales} />
-      {/*       {notes.map((note) => (
-        <div key={note}>{note}</div>
-      ))} */}
       <Footer />
     </main>
   );

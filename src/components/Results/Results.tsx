@@ -5,9 +5,9 @@ interface IProps {
 export default function Results({ matchingScales }: IProps) {
   return (
     <div>
-      {matchingScales.map((scale) => (
-        <div key={scale.annotation}>
-          {scale.annotation} {scale.type.name}
+      {matchingScales.map((scale, index) => (
+        <div key={index}>
+          {scale.annotation} {scale.type.name} {scale.type.sequence}
         </div>
       ))}
     </div>
