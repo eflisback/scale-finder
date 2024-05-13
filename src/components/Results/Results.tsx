@@ -1,13 +1,15 @@
+import styles from "./Results.module.css";
+
 interface IProps {
   matchingScales: Scale[];
 }
 
 export default function Results({ matchingScales }: IProps) {
   return (
-    <div>
+    <div className={styles.results}>
       {matchingScales.map((scale, index) => (
-        <div key={index}>
-          {scale.annotation} {scale.type.name} {scale.type.sequence}
+        <div key={index} className={styles.scale}>
+          {scale.annotation} {scale.type.name}
         </div>
       ))}
     </div>

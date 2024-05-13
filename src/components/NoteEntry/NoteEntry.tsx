@@ -1,9 +1,13 @@
+import styles from "./NoteEntry.module.css";
+
 import { useState } from "react";
 import { getNoteValue } from "../../util/translateNotes";
 
 interface IProps {
   setNotes: React.Dispatch<React.SetStateAction<number[]>>;
 }
+
+const placeholders = ["E♭", "F", "G", "G#", "Bb", "C", "D"];
 
 export default function NoteEntry({ setNotes }: IProps) {
   const [annotations, setAnnotations] = useState<string[]>(Array(7).fill(""));
@@ -25,14 +29,17 @@ export default function NoteEntry({ setNotes }: IProps) {
   }
 
   return (
-    <div>
+    <div className={styles.noteEntry}>
+      <span>Enter</span>
       {annotations.map((annotation, index) => (
         <input
+          autoFocus={index === 0}
           key={index}
           value={annotation}
           onChange={(e) => handleInputChange(index, e.target.value)}
-          placeholder="Enter note (e.g., C#, Db, D♭)"
-          style={{ margin: "5px" }}
+          placeholder={placeholders[index]}
+          maxLength={2}
+          tabIndex={index + 1}
         />
       ))}
     </div>
