@@ -25,30 +25,41 @@ function generateScale(startNote: number, sequence: number[]): number[] {
   );
 }
 
-function getMatchingScales(notes: number[]): Scale[] {
+function generateAllScales(): Scale[] {
   const scales: Scale[] = [];
 
   for (let i = 0; i < 12; i++) {
     for (const scaleType of scaleTypes) {
       const scale = generateScale(i, scaleType.sequence);
-
-      if (notes.every((note) => scale.includes(note))) {
-        scales.push({
-          annotation: getNoteAnnotation(i)[0],
-          type: scaleType,
-        });
-      }
+      scales.push({
+        notes: scale,
+        annotation: getNoteAnnotation(i)[0],
+        type: scaleType,
+      });
     }
   }
 
   return scales;
 }
 
+function getMatchingScales(allScales: Scale[], notes: number[]): Scale[] {
+  return allScales.filter((scale) =>
+    notes.every((note) => scale.notes.includes(note))
+  );
+}
+
 function App() {
   const [notes, setNotes] = useState<number[]>([]);
   const [matchingScales, setMatchingScales] = useState<Scale[]>([]);
+  const [allScales, setAllScales] = useState<Scale[]>([]);
 
-  useEffect(() => setMatchingScales(getMatchingScales(notes)), [notes]);
+  useEffect(() => {
+    setAllScales(generateAllScales());
+  }, []);
+
+  useEffect(() => {
+    setMatchingScales(getMatchingScales(allScales, notes));
+  }, [notes, allScales]);
 
   return (
     <main>
