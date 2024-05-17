@@ -15,10 +15,6 @@
   flex-direction: row;
 }
 
-.addNotes > *:first-child {
-  margin-right: 10px;
-}
-
 .addNotes input {
   outline: none;
   border: none;
@@ -33,14 +29,13 @@
 }
 
 .addNotes button {
+  margin-left: 10px;
   font-size: var(--size-small);
   outline: none;
-  border: none;
   background-color: transparent;
   border-radius: 5px;
   cursor: pointer;
 
-  border: 1px solid var(--spotify-color);
   color: white;
   padding: 10px;
 }
@@ -56,14 +51,23 @@
   flex-direction: row;
 }
 
-.annotations > div {
+.annotations > button {
+  outline: none;
+  border: none;
   margin-left: 10px;
   padding: 10px 15px;
-  width: fit-content;
-  height: fit-content;
   background-color: var(--spotify-color);
   color: white;
   border-radius: 5px;
   transition: 0.15s ease-in-out;
   cursor: pointer;
+  font-size: var(--size-small);
+}
+
+.addButton {
+  border: 1px solid var(--spotify-color);
+}
+
+.clearButton {
+  border: 1px solid var(--remove-color);
 }

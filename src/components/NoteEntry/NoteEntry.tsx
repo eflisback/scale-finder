@@ -2,7 +2,11 @@ import styles from "./NoteEntry.module.css";
 
 import { useState } from "react";
 import { getNoteAnnotation, getNoteValue } from "../../util/translateNotes";
-import { IoIosArrowForward, IoIosMusicalNotes } from "react-icons/io";
+import {
+  IoIosArrowForward,
+  IoIosMusicalNotes,
+  IoMdRemove,
+} from "react-icons/io";
 import { NOTES } from "../../variables";
 
 interface IProps {
@@ -35,6 +39,14 @@ export default function NoteEntry({ notes, setNotes }: IProps) {
     }
   }
 
+  function removeNote(note: number) {
+    setNotes((prevNotes) => prevNotes.filter((n) => n !== note));
+  }
+
+  function clearInput() {
+    setNotes([]);
+  }
+
   return (
     <div className={styles.noteEntry}>
       <h3>
@@ -51,20 +63,26 @@ export default function NoteEntry({ notes, setNotes }: IProps) {
               NOTES[~~(Math.random() * NOTES.length)][0]
             }...`}
             maxLength={2}
+            autoFocus
+            autoCapitalize=""
           />
-          <button onClick={addNote}>
+          <button onClick={addNote} className={styles.addButton}>
             Add note
             <IoIosArrowForward />
+          </button>
+          <button onClick={clearInput} className={styles.clearButton}>
+            Clear input
+            <IoMdRemove />
           </button>
         </div>
         <div className={styles.annotations}>
           {notes.map((note) => {
             const annotation = getNoteAnnotation(note);
             return (
-              <div key={note}>
+              <button key={note} onClick={() => removeNote(note)}>
                 <span>{annotation[0]}</span>
                 {annotation.length === 3 ? <span>, {annotation[2]}</span> : ""}
-              </div>
+              </button>
             );
           })}
         </div>
