@@ -37,7 +37,7 @@ function generateAllScales(): Scale[] {
       const scale = generateScale(i, scaleType.sequence);
       scales.push({
         notes: scale,
-        annotation: getNoteAnnotation(i)[0],
+        annotations: getNoteAnnotation(i),
         type: scaleType,
       });
     }

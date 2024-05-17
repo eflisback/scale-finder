@@ -29,10 +29,15 @@ export default function Results({ matchingScales }: IProps) {
       <h3>
         <IoList /> Matching scales
       </h3>
-      <ScaleSection categoryTitle="Major scales" scales={basicScales} />
+      <ScaleSection
+        categoryTitle="Major scales"
+        scales={basicScales}
+        expandedByDefault
+      />
       <ScaleSection
         categoryTitle="Natural minor scales"
         scales={naturalMinorScales}
+        expandedByDefault
       />
       <ScaleSection
         categoryTitle="Harmonic minor scales"

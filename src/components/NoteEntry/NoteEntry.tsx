@@ -2,11 +2,7 @@ import styles from "./NoteEntry.module.css";
 
 import { useState } from "react";
 import { getNoteAnnotation, getNoteValue } from "../../util/translateNotes";
-import {
-  IoIosArrowForward,
-  IoIosMusicalNotes,
-  IoMdRemove,
-} from "react-icons/io";
+import { IoIosMusicalNotes, IoMdAdd, IoMdRemove } from "react-icons/io";
 import { NOTES } from "../../variables";
 
 interface IProps {
@@ -68,7 +64,7 @@ export default function NoteEntry({ notes, setNotes }: IProps) {
           />
           <button onClick={addNote} className={styles.addButton}>
             Add note
-            <IoIosArrowForward />
+            <IoMdAdd />
           </button>
           <button onClick={clearInput} className={styles.clearButton}>
             Clear input

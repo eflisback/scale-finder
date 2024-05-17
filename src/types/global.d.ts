@@ -5,6 +5,6 @@ interface ScaleType {
 
 interface Scale {
   notes: number[];
-  annotation: string;
+  annotations: string[];
   type: ScaleType;
 }
