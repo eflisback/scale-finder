@@ -1,4 +1,4 @@
-export const notes: string[][] = [
+export const NOTES: string[][] = [
   ["A"],
   ["A#", "Bb", "B♭"],
   ["B"],

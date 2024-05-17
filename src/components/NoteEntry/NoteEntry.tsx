@@ -3,6 +3,7 @@ import styles from "./NoteEntry.module.css";
 import { useState } from "react";
 import { getNoteAnnotation, getNoteValue } from "../../util/translateNotes";
 import { IoIosArrowForward, IoIosMusicalNotes } from "react-icons/io";
+import { NOTES } from "../../variables";
 
 interface IProps {
   notes: number[];
@@ -46,7 +47,9 @@ export default function NoteEntry({ notes, setNotes }: IProps) {
             type="text"
             onChange={handleInputChange}
             value={input}
-            placeholder="Enter a note, like C"
+            placeholder={`Enter a note, like ${
+              NOTES[~~(Math.random() * NOTES.length)][0]
+            }...`}
             maxLength={2}
           />
           <button onClick={addNote}>

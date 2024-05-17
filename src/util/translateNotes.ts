@@ -1,8 +1,8 @@
-import { notes } from "../variables";
+import { NOTES } from "../variables";
 
 export function getNoteValue(annotation: string): number {
-  for (let index = 0; index < notes.length; index++) {
-    if (notes[index].includes(annotation)) {
+  for (let index = 0; index < NOTES.length; index++) {
+    if (NOTES[index].includes(annotation)) {
       return index;
     }
   }
@@ -10,5 +10,5 @@ export function getNoteValue(annotation: string): number {
 }
 
 export function getNoteAnnotation(noteValue: number): string[] {
-  return notes[noteValue];
+  return NOTES[noteValue];
 }
