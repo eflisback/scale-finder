@@ -10,11 +10,15 @@ import Footer from "./components/Footer/Footer";
 const scaleTypes: ScaleType[] = [
   {
     name: "Major",
-    sequence: [2, 2, 1, 2, 2, 2, 1],
+    sequence: [2, 2, 1, 2, 2, 2],
   },
   {
-    name: "Minor",
-    sequence: [2, 1, 2, 2, 1, 2, 2],
+    name: "Natural minor",
+    sequence: [2, 1, 2, 2, 1, 2],
+  },
+  {
+    name: "Harmonic minor",
+    sequence: [2, 1, 2, 2, 3, 1],
   },
 ];
 

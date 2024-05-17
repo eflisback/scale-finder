@@ -38,6 +38,7 @@
 
   color: white;
   padding: 10px;
+  transition: 0.15s ease-in-out;
 }
 
 .addNotes button svg {
@@ -68,6 +69,16 @@
   border: 1px solid var(--spotify-color);
 }
 
+.addButton:hover {
+  background-color: var(--spotify-color);
+  color: white;
+}
+
 .clearButton {
   border: 1px solid var(--remove-color);
+}
+
+.clearButton:hover {
+  background-color: var(--remove-color);
+  color: white;
 }
