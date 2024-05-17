@@ -9,6 +9,6 @@ export function getNoteValue(annotation: string): number {
   return -1;
 }
 
-export function getNoteAnnotation(noteValue: number): string {
-  return notes[noteValue][0];
+export function getNoteAnnotation(noteValue: number): string[] {
+  return notes[noteValue];
 }

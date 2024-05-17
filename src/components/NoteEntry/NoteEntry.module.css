@@ -7,10 +7,19 @@
 .inputs {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
 }
 
-.noteEntry input {
+.addNotes {
+  display: flex;
+  flex-direction: row;
+}
+
+.addNotes > *:first-child {
+  margin-right: 10px;
+}
+
+.addNotes input {
   outline: none;
   border: none;
   background-color: transparent;
@@ -19,7 +28,42 @@
   color: white;
   border: 1px solid white;
   text-align: left;
-  padding: 5px 15px;
-  margin: 0 25px;
-  font-size: var(--size-medium);
+  padding: 10px 15px;
+  font-size: var(--size-small);
+}
+
+.addNotes button {
+  font-size: var(--size-small);
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+
+  border: 1px solid var(--spotify-color);
+  color: white;
+  padding: 10px;
+}
+
+.addNotes button svg {
+  position: relative;
+  top: 2px;
+  margin-left: 5px;
+}
+
+.annotations {
+  display: flex;
+  flex-direction: row;
+}
+
+.annotations > div {
+  margin-left: 10px;
+  padding: 10px 15px;
+  width: fit-content;
+  height: fit-content;
+  background-color: var(--spotify-color);
+  color: white;
+  border-radius: 5px;
+  transition: 0.15s ease-in-out;
+  cursor: pointer;
 }

@@ -34,7 +34,7 @@ function getMatchingScales(notes: number[]): Scale[] {
 
       if (notes.every((note) => scale.includes(note))) {
         scales.push({
-          annotation: getNoteAnnotation(i),
+          annotation: getNoteAnnotation(i)[0],
           type: scaleType,
         });
       }
@@ -53,7 +53,7 @@ function App() {
   return (
     <main>
       <Header />
-      <NoteEntry setNotes={setNotes} />
+      <NoteEntry notes={notes} setNotes={setNotes} />
       <Results matchingScales={matchingScales} />
       <Footer />
     </main>

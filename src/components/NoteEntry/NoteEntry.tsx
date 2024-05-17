@@ -1,32 +1,37 @@
 import styles from "./NoteEntry.module.css";
 
 import { useState } from "react";
-import { getNoteValue } from "../../util/translateNotes";
-import { IoIosMusicalNotes } from "react-icons/io";
+import { getNoteAnnotation, getNoteValue } from "../../util/translateNotes";
+import { IoIosArrowForward, IoIosMusicalNotes } from "react-icons/io";
 
 interface IProps {
+  notes: number[];
   setNotes: React.Dispatch<React.SetStateAction<number[]>>;
 }
 
-const placeholders = ["E♭", "F", "G", "G#", "Bb", "C", "D"];
+export default function NoteEntry({ notes, setNotes }: IProps) {
+  const [input, setInput] = useState("");
 
-export default function NoteEntry({ setNotes }: IProps) {
-  const [annotations, setAnnotations] = useState<string[]>(Array(7).fill(""));
+  function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const inputValue = event.target.value;
+    if (inputValue.length > 0) {
+      const capitalizedInput =
+        inputValue.charAt(0).toUpperCase() + inputValue.slice(1);
+      setInput(capitalizedInput);
+    } else {
+      setInput(inputValue);
+    }
+  }
 
-  function handleInputChange(index: number, value: string) {
-    const capitalizedValue =
-      value.length > 0
-        ? value.charAt(0).toUpperCase() + value.slice(1).toLowerCase()
-        : value;
-
-    const newAnnotations = [...annotations];
-    newAnnotations[index] = capitalizedValue;
-    setAnnotations(newAnnotations);
-
-    const noteValues = new Set(
-      newAnnotations.map(getNoteValue).filter((value) => value !== -1)
-    );
-    setNotes(Array.from(noteValues));
+  function addNote() {
+    const trimmedInput = input.trim();
+    if (trimmedInput) {
+      const noteValue = getNoteValue(trimmedInput);
+      if (!notes.includes(noteValue)) {
+        setNotes((prevNotes) => [...prevNotes, getNoteValue(trimmedInput)]);
+      }
+      setInput("");
+    }
   }
 
   return (
@@ -36,18 +41,30 @@ export default function NoteEntry({ setNotes }: IProps) {
         Note input
       </h3>
       <div className={styles.inputs}>
-        {annotations.map((annotation, index) => (
+        <div className={styles.addNotes}>
           <input
-            autoFocus={index === 0}
-            key={index}
-            value={annotation}
-            onChange={(e) => handleInputChange(index, e.target.value)}
-            placeholder={placeholders[index]}
-            size={2}
+            type="text"
+            onChange={handleInputChange}
+            value={input}
+            placeholder="Enter a note, like C"
             maxLength={2}
-            tabIndex={index + 1}
           />
-        ))}
+          <button onClick={addNote}>
+            Add note
+            <IoIosArrowForward />
+          </button>
+        </div>
+        <div className={styles.annotations}>
+          {notes.map((note) => {
+            const annotation = getNoteAnnotation(note);
+            return (
+              <div key={note}>
+                <span>{annotation[0]}</span>
+                {annotation.length === 3 ? <span>, {annotation[2]}</span> : ""}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
