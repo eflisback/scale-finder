@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PianoModal from "../../../PianoModal/PianoModal";
 import styles from "./ScaleButton.module.css";
 
@@ -8,6 +8,10 @@ interface IProps {
 
 export default function ScaleButton({ scale }: IProps) {
   const [isPianoModalOpen, setIsPianoModalOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = isPianoModalOpen ? "hidden" : "auto";
+  }, [isPianoModalOpen]);
 
   return (
     <>
