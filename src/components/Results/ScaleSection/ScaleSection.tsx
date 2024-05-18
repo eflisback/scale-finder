@@ -4,6 +4,7 @@ import styles from "./ScaleSection.module.css";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 import ScaleButton from "./ScaleButton/ScaleButton";
+import { TiDeleteOutline } from "react-icons/ti";
 
 interface IProps {
   categoryTitle: string;
@@ -37,6 +38,7 @@ export default function ScaleSection({
             ))
           ) : (
             <span className={styles.noMatches}>
+              <TiDeleteOutline />
               No matching {categoryTitle.toLowerCase()} found...
             </span>
           )}

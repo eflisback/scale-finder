@@ -61,6 +61,11 @@ export default function NoteEntry({ notes, setNotes }: IProps) {
             maxLength={2}
             autoFocus
             autoCapitalize=""
+            onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+              if (e.key === "Enter") {
+                addNote();
+              }
+            }}
           />
           <button onClick={addNote} className={styles.addButton}>
             Add note
