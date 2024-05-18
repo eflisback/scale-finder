@@ -1,4 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
 .header {
   width: 100%;
+  padding-top: 20px;
   font-size: var(--size-large);
+  font-family: "VT323", monospace;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+}
+
+.credits {
+  font-size: 28px;
+}
+
+.gradient {
+  background: -webkit-linear-gradient(
+    45deg,
+    var(--spotify-color),
+    var(--no-match-color),
+    var(--remove-color)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
