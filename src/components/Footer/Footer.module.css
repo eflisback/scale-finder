@@ -3,4 +3,42 @@
   color: var(--background-color);
   padding-top: 50px;
   padding-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+}
+
+.linkList a {
+  margin-top: 3px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.linkList a svg {
+  position: relative;
+  top: 1px;
+  margin-right: 5px;
+}
+
+.footer section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.title {
+  font-weight: bold;
+}
+
+#center * {
+  text-align: center;
+}
+
+#right * {
+  text-align: right;
 }

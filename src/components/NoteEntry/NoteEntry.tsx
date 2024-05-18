@@ -55,9 +55,13 @@ export default function NoteEntry({ notes, setNotes }: IProps) {
             type="text"
             onChange={handleInputChange}
             value={input}
-            placeholder={`Enter a note, like ${
-              NOTES[~~(Math.random() * NOTES.length)][0]
-            }...`}
+            placeholder={`Enter a note, like ${(() => {
+              const randomFirstIndex = ~~(Math.random() * NOTES.length);
+              const randomSecondIndex = ~~(
+                Math.random() * NOTES[randomFirstIndex].length
+              );
+              return NOTES[randomFirstIndex][randomSecondIndex];
+            })()}...`}
             maxLength={2}
             autoFocus
             autoCapitalize=""
@@ -67,6 +71,7 @@ export default function NoteEntry({ notes, setNotes }: IProps) {
               }
             }}
           />
+
           <button onClick={addNote} className={styles.addButton}>
             Add note
             <IoMdAdd />
