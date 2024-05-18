@@ -60,7 +60,6 @@ export default function PianoModal({ isOpen, setIsOpen, scale }) {
             }}
             playNote={(midiNumber) => {}}
             stopNote={(midiNumber) => {}}
-            width={450}
             activeNotes={activeNotes}
           />
         </div>
