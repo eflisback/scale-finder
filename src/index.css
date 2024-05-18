@@ -33,7 +33,13 @@ main {
   flex-direction: column;
 }
 
-main > * {
+main > section {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main > section > * {
   padding: 0 var(--standard-padding);
 }
 

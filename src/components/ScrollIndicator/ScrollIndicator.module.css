@@ -1,0 +1,38 @@
+@keyframes pulsate {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+.scrollIndicator {
+  position: absolute;
+  z-index: -10;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px calc(var(--standard-padding) / 2);
+  justify-content: space-between;
+}
+
+.scrollIndicator span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+}
+
+.scrollIndicator span svg {
+  animation: pulsate 3s infinite;
+}
+
+.scrollIndicator span svg:first-of-type {
+  font-size: 20px;
+  position: relative;
+  top: 8px;
+  animation-delay: 0.3s;
+}
