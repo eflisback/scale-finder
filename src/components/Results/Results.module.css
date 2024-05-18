@@ -8,12 +8,7 @@
 }
 
 .results > * {
-  padding: 0 200px;
-}
-
-.results h3 {
-  margin-left: 5px;
-  margin-right: 5px;
+  padding: 0 var(--standard-padding);
 }
 
 .scrollable {
@@ -21,4 +16,5 @@
   flex-direction: column;
   flex: 1;
   min-height: 0px;
+  overflow-y: auto;
 }

@@ -11,6 +11,8 @@
   --size-large: 50px;
   --size-medium: 20px;
   --size-small: 14px;
+
+  --standard-padding: 325px;
 }
 
 * {
@@ -26,18 +28,13 @@ body {
 
 main {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 main > * {
-  padding: 0 200px;
-  margin-bottom: 25px;
-}
-
-main > *:last-child {
-  margin-bottom: 0;
+  padding: 0 var(--standard-padding);
 }
 
 h3 {

@@ -33,8 +33,8 @@ export default function ScaleSection({
       {isExpanded ? (
         <div className={styles.scales}>
           {scales.length !== 0 ? (
-            scales.map((scale, index) => (
-              <ScaleButton key={index} scale={scale} />
+            scales.map((scale) => (
+              <ScaleButton key={scale.annotations[0]} scale={scale} />
             ))
           ) : (
             <span className={styles.noMatches}>
