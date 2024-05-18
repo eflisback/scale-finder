@@ -19,12 +19,16 @@ export default function Footer() {
         </div>
       </section>
       <section id={styles.center}>
-        <span className={styles.title}>About Simple Scale Finder</span>
+        <span className={styles.title}>About</span>
         <span>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
-          accusamus, error est qui officiis officia nihil quisquam culpa
-          voluptatem pariatur ea labore non consequatur iure quos soluta alias
-          aut. Ullam?
+          Hi! I'm Ebbe, a software engineering student from Sweden who also
+          dabbles in music production. I made this web app as a showcase project
+          for my resumé, but also because I wasn't satisfied with the online
+          tools that already existed in its place. I hope Simple Scale Finder
+          brought you joy. If you have any feedback, feature requests or
+          similar, feel free to check out{" "}
+          <a href="https://github.com/eflisback/scale-finder">the repository</a>{" "}
+          over on GitHub.
         </span>
       </section>
       <section id={styles.right}>

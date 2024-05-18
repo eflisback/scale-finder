@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
 .footer {
   margin-top: 20px;
-  border-top: 1px solid lightgray;
+  border-top: 1px solid var(--spotify-color);
   color: lightgrey;
   padding: 35px var(--standard-padding);
   display: flex;
@@ -28,12 +30,25 @@
 .footer section {
   display: flex;
   flex-direction: column;
-  flex: 1;
 }
 
 .title {
   font-weight: bold;
   color: white;
+  font-family: "VT323", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+}
+
+#center {
+  max-width: 50%;
+}
+
+#center a {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 #center * {
