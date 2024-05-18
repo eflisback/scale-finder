@@ -7,21 +7,26 @@ interface IProps {
   matchingScales: Scale[];
 }
 
+const scaleTypes = [
+  "Major",
+  "Natural minor",
+  "Harmonic minor",
+  "Melodic minor",
+];
+
 export default function Results({ matchingScales }: IProps) {
-  const [basicScales, setBasicScales] = useState<Scale[]>([]);
-  const [naturalMinorScales, setNaturalMinorScales] = useState<Scale[]>([]);
-  const [harmonicMinorScales, setHarmonicMinorScales] = useState<Scale[]>([]);
+  const [scalesByCategory, setScalesByCategory] = useState<{
+    [key: string]: Scale[];
+  }>({});
 
   useEffect(() => {
-    setBasicScales(
-      matchingScales.filter((scale) => scale.type.name === "Major")
-    );
-    setNaturalMinorScales(
-      matchingScales.filter((scale) => scale.type.name === "Natural minor")
-    );
-    setHarmonicMinorScales(
-      matchingScales.filter((scale) => scale.type.name === "Harmonic minor")
-    );
+    const newScalesByCategory: { [key: string]: Scale[] } = {};
+    scaleTypes.forEach((type) => {
+      newScalesByCategory[type] = matchingScales.filter(
+        (scale) => scale.type.name === type
+      );
+    });
+    setScalesByCategory(newScalesByCategory);
   }, [matchingScales]);
 
   return (
@@ -30,20 +35,14 @@ export default function Results({ matchingScales }: IProps) {
         <IoList /> Matching scales
       </h3>
       <div className={styles.scrollable}>
-        <ScaleSection
-          categoryTitle="Major scales"
-          scales={basicScales}
-          expandedByDefault
-        />
-        <ScaleSection
-          categoryTitle="Natural minor scales"
-          scales={naturalMinorScales}
-          expandedByDefault
-        />
-        <ScaleSection
-          categoryTitle="Harmonic minor scales"
-          scales={harmonicMinorScales}
-        />
+        {scaleTypes.map((type) => (
+          <ScaleSection
+            key={type}
+            categoryTitle={`${type} scales`}
+            scales={scalesByCategory[type] || []}
+            expandedByDefault
+          />
+        ))}
       </div>
     </div>
   );
