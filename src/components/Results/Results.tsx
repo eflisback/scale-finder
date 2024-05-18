@@ -44,15 +44,6 @@ export default function Results({ matchingScales }: IProps) {
           categoryTitle="Harmonic minor scales"
           scales={harmonicMinorScales}
         />
-        <ScaleSection
-          categoryTitle="Natural minor scales"
-          scales={naturalMinorScales}
-          expandedByDefault
-        />
-        <ScaleSection
-          categoryTitle="Harmonic minor scales"
-          scales={harmonicMinorScales}
-        />
       </div>
     </div>
   );

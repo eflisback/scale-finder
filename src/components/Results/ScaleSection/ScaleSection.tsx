@@ -3,6 +3,7 @@ import styles from "./ScaleSection.module.css";
 
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
+import ScaleButton from "./ScaleButton/ScaleButton";
 
 interface IProps {
   categoryTitle: string;
@@ -32,16 +33,7 @@ export default function ScaleSection({
         <div className={styles.scales}>
           {scales.length !== 0 ? (
             scales.map((scale, index) => (
-              <div key={index} className={styles.scale}>
-                {scale.annotations.length > 1 ? (
-                  <span>
-                    {scale.annotations[0]}, {scale.annotations[2]}
-                  </span>
-                ) : (
-                  <span>{scale.annotations[0]}</span>
-                )}{" "}
-                {scale.type.name}
-              </div>
+              <ScaleButton key={index} scale={scale} />
             ))
           ) : (
             <span className={styles.noMatches}>
