@@ -24,6 +24,14 @@ const scaleTypes: ScaleType[] = [
     name: "Melodic minor",
     sequence: [2, 1, 2, 2, 2, 2, 1],
   },
+  {
+    name: "Major pentatonic",
+    sequence: [2, 2, 3, 2, 3],
+  },
+  {
+    name: "Minor pentatonic",
+    sequence: [3, 2, 2, 3, 2],
+  },
 ];
 
 function generateScale(startNote: number, sequence: number[]): number[] {

@@ -12,6 +12,8 @@ const scaleTypes = [
   "Natural minor",
   "Harmonic minor",
   "Melodic minor",
+  "Major pentatonic",
+  "Minor pentatonic",
 ];
 
 export default function Results({ matchingScales }: IProps) {
@@ -35,12 +37,12 @@ export default function Results({ matchingScales }: IProps) {
         <IoList /> Matching scales
       </h3>
       <div className={styles.scrollable}>
-        {scaleTypes.map((type) => (
+        {scaleTypes.map((type, index) => (
           <ScaleSection
             key={type}
             categoryTitle={`${type} scales`}
             scales={scalesByCategory[type] || []}
-            expandedByDefault
+            expandedByDefault={index < 4}
           />
         ))}
       </div>

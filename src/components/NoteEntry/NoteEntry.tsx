@@ -28,7 +28,7 @@ export default function NoteEntry({ notes, setNotes }: IProps) {
     const trimmedInput = input.trim();
     if (trimmedInput) {
       const noteValue = getNoteValue(trimmedInput);
-      if (!notes.includes(noteValue)) {
+      if (!notes.includes(noteValue) && noteValue !== -1) {
         setNotes((prevNotes) => [...prevNotes, getNoteValue(trimmedInput)]);
       }
       setInput("");

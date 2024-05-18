@@ -4,6 +4,11 @@
   flex-direction: column;
   min-height: 0px;
   flex: 1;
+  padding: 0;
+}
+
+.results > * {
+  padding: 0 200px;
 }
 
 .results h3 {
