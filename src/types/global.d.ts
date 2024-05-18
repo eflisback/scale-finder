@@ -8,5 +8,3 @@ interface Scale {
   annotations: string[];
   type: ScaleType;
 }
-
-declare module "react-piano";
