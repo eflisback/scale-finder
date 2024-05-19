@@ -1,5 +1,4 @@
 import styles from "./Header.module.css";
-// import { ReactComponent as YourSvg } from "/simple-scale-finder-icon.svg";
 
 export default function Header() {
   return (
