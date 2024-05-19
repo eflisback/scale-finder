@@ -1,5 +1,5 @@
-import { FaGithub, FaInstagram, FaLinkedin, FaSpotify } from "react-icons/fa";
 import styles from "./Footer.module.css";
+import { FaGithub, FaInstagram, FaLinkedin, FaSpotify } from "react-icons/fa";
 import { BsMusicNoteList } from "react-icons/bs";
 
 export default function Footer() {
