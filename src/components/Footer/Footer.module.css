@@ -10,12 +10,22 @@
   justify-content: space-between;
 }
 
+.footer a {
+  transition: 0.15s ease-in-out;
+  color: inherit;
+}
+
+.footer a:hover {
+  color: white;
+}
+
 .linkList {
   display: flex;
   flex-direction: column;
 }
 
-.linkList a {
+.linkList a,
+.iconList a {
   margin-top: 3px;
   text-decoration: none;
   color: inherit;
@@ -25,6 +35,12 @@
   position: relative;
   top: 1px;
   margin-right: 5px;
+}
+
+.iconList a svg {
+  font-size: 24px;
+  position: relative;
+  margin-left: 7px;
 }
 
 .footer section {
@@ -46,7 +62,6 @@
 }
 
 #center a {
-  color: inherit;
   font-weight: bold;
   text-decoration: none;
 }

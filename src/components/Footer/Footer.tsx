@@ -1,4 +1,4 @@
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin, FaSpotify } from "react-icons/fa";
 import styles from "./Footer.module.css";
 import { BsMusicNoteList } from "react-icons/bs";
 
@@ -33,8 +33,29 @@ export default function Footer() {
       </section>
       <section id={styles.right}>
         <span className={styles.title}>Socials</span>
-        <div className={styles.linkList}>
-          <span>Something here</span>
+        <div className={styles.iconList}>
+          <div>
+            <a href="https://github.com/eflisback" target="_blank">
+              <FaGithub />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/ebbe-flisb%C3%A4ck-a89a3a296/"
+              target="_blank"
+            >
+              <FaLinkedin />
+            </a>
+          </div>
+          <div>
+            <a href="https://www.instagram.com/eflisback/" target="_blank">
+              <FaInstagram />
+            </a>
+            <a
+              href="https://open.spotify.com/artist/1xCUUcfm6UFnMH125m3dJV?si=103c24a68c5b4f10"
+              target="_blank"
+            >
+              <FaSpotify />
+            </a>
+          </div>
         </div>
       </section>
     </div>
