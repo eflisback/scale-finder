@@ -24,8 +24,8 @@ export default function Footer() {
           Hi! I'm Ebbe, a software engineering student from Sweden who also
           dabbles in music production. I made this web app as a showcase project
           for my resumé, but also because I wasn't satisfied with the online
-          tools that already existed in its place. I hope Simple Scale Finder
-          brought you joy. If you have any feedback, feature requests or
+          tools that already existed in its place. I hope this simple Scale
+          Finder brought you joy. If you have any feedback, feature requests or
           similar, feel free to check out{" "}
           <a href="https://github.com/eflisback/scale-finder">the repository</a>{" "}
           over on GitHub.
