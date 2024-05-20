@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./PianoModal.module.css";
 import { RxCross2 } from "react-icons/rx";
 import { Piano, MidiNumbers } from "react-piano";
-import { getNoteValue } from "../../util/translateNotes";
+import { getNoteAnnotation, getNoteValue } from "../../util/translateNotes";
 import "react-piano/dist/styles.css";
 
 export default function PianoModal({ isOpen, setIsOpen, scale }) {
@@ -45,11 +45,18 @@ export default function PianoModal({ isOpen, setIsOpen, scale }) {
           </h3>
           <RxCross2 onClick={() => setIsOpen(false)} />
         </div>
-        <div className={styles.placeholder}>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia,
-          aliquid, perferendis enim molestias consectetur quam iusto laboriosam
-          dignissimos nulla amet eos deserunt similique sit eum repudiandae.
-          Ipsum ad praesentium alias?
+        <div>
+          <span>
+            <i>
+              {scale.annotations[0]} {scale.type.name}{" "}
+            </i>
+            consists of the notes{" "}
+            {scale.notes.map((note) => (
+              <span key={note} className={styles.note}>
+                {getNoteAnnotation(note)[0]},{" "}
+              </span>
+            ))}
+          </span>
         </div>
         <div className={styles.pianoHolder}>
           <Piano
