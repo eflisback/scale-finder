@@ -27,7 +27,7 @@ export default function PianoModal({ isOpen, setIsOpen, scale }) {
       toBeActiveNotes = toBeActiveNotes.map((number) => number - 12);
     }
     setActiveNotes(toBeActiveNotes);
-  }, []);
+  }, [scale, intervalStart, intervalEnd]);
 
   if (!isOpen) return;
 
@@ -48,14 +48,28 @@ export default function PianoModal({ isOpen, setIsOpen, scale }) {
         <div>
           <span>
             <i>
-              {scale.annotations[0]} {scale.type.name}{" "}
+              {scale.annotations[0]}
+              {scale.annotations.length === 3 && (
+                <span>
+                  {" ("}or {scale.annotations[2] + ")"}
+                </span>
+              )}{" "}
+              {scale.type.name}{" "}
             </i>
-            consists of the notes{" "}
-            {scale.notes.map((note) => (
-              <span key={note} className={styles.note}>
-                {getNoteAnnotation(note)[0]},{" "}
-              </span>
-            ))}
+            consists of the notes:
+            <div className={styles.annotations}>
+              {scale.notes.map((note) => {
+                const annotation = getNoteAnnotation(note);
+                return (
+                  <span key={note} className={styles.annotation}>
+                    {annotation[0]}
+                    {annotation.length === 3 && (
+                      <span>{", " + annotation[2]}</span>
+                    )}
+                  </span>
+                );
+              })}
+            </div>
           </span>
         </div>
         <div className={styles.pianoHolder}>
@@ -65,8 +79,8 @@ export default function PianoModal({ isOpen, setIsOpen, scale }) {
               first: intervalStart,
               last: intervalEnd,
             }}
-            playNote={(midiNumber) => {}}
-            stopNote={(midiNumber) => {}}
+            playNote={() => {}}
+            stopNote={() => {}}
             activeNotes={activeNotes}
           />
         </div>
