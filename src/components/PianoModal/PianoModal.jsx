@@ -58,7 +58,7 @@ export default function PianoModal({ isOpen, setIsOpen, scale }) {
             </i>
             consists of the notes:
             <div className={styles.annotations}>
-              {scale.notes.map((note) => {
+              {scale.notes.map((note, index) => {
                 const annotation = getNoteAnnotation(note);
                 return (
                   <span key={note} className={styles.annotation}>
@@ -66,6 +66,7 @@ export default function PianoModal({ isOpen, setIsOpen, scale }) {
                     {annotation.length === 3 && (
                       <span>{", " + annotation[2]}</span>
                     )}
+                    {index === scale.notes.length - 1 && <i> (+1)</i>}
                   </span>
                 );
               })}
