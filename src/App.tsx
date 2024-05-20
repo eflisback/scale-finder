@@ -69,32 +69,19 @@ function App() {
   const [notes, setNotes] = useState<number[]>([]);
   const [matchingScales, setMatchingScales] = useState<Scale[]>([]);
   const [allScales, setAllScales] = useState<Scale[]>([]);
-  const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
     setAllScales(generateAllScales());
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
     setMatchingScales(getMatchingScales(allScales, notes));
   }, [notes, allScales]);
-
-  const maxScroll = 100;
-  const opacity = 1 - Math.min(scrollPosition / maxScroll, 1);
 
   return (
     <main>
       <section>
-        <ScrollIndicator opacity={opacity} />
+        <ScrollIndicator />
         <Header />
         <NoteEntry notes={notes} setNotes={setNotes} />
         <Results matchingScales={matchingScales} />

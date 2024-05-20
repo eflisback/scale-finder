@@ -1,11 +1,21 @@
+import { useEffect, useState } from "react";
 import { IoIosArrowUp } from "react-icons/io";
 import styles from "./ScrollIndicator.module.css";
 
-interface IProps {
-  opacity: number;
-}
+const ScrollIndicator = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const maxScroll = 100;
+  const opacity = 1 - Math.min(scrollPosition / maxScroll, 1);
 
-export default function ScrollIndicator({ opacity }: IProps) {
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className={styles.scrollIndicator} style={{ opacity }}>
       <span>
@@ -18,4 +28,6 @@ export default function ScrollIndicator({ opacity }: IProps) {
       </span>
     </div>
   );
-}
+};
+
+export default ScrollIndicator;
