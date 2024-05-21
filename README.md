@@ -1,30 +1,31 @@
-# React + TypeScript + Vite
+# Scale Finder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple yet modern music scale detector tool made with React.
 
-Currently, two official plugins are available:
+## Introduction
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Hi! I'm Ebbe, a software engineering student from Sweden who also dabbles in music production. I made this web app as a showcase project for my resumé, but also because I wasn't satisfied with the online tools that already existed in its place. I hope this simple Scale Finder brings you joy. If it brings you misery, feel free to suggest improvements :-) More on that later.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Modern Interface**: Built with React, Scale Finder offers a sleek and user-friendly interface.
+- **Accurate Detection**: Uses some pretty nifty algorithms to accurately detect music scales.
+- **Responsive Design**: Works seamlessly on desktop.
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+Getting started to run locally is super easy! Just clone the repo and install the dependencies:
+
+```bash
+git clone https://github.com/eflisback/scale-finder.git
+cd scale-finder
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Contributions
+
+Got ideas or found a bug? Awesome! Feel free to fork the repo and submit a pull request. If you run into any issues or have suggestions, just open an issue on GitHub.
+
+## License
+
+This project is open source and available under the MIT License. Fork it, tweak it, and make it your own.
