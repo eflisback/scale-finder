@@ -5,8 +5,14 @@ import { Piano, MidiNumbers } from "react-piano";
 import { getNoteAnnotation, getNoteValue } from "../../util/translateNotes";
 import "react-piano/dist/styles.css";
 
-export default function PianoModal({ isOpen, setIsOpen, scale }) {
-  const [activeNotes, setActiveNotes] = useState([]);
+interface Props {
+  isOpen: boolean;
+  scale: Scale;
+  setIsOpen: (open: boolean) => void;
+}
+
+export default function PianoModal({ isOpen, setIsOpen, scale }: Props) {
+  const [activeNotes, setActiveNotes] = useState<number[]>([]);
   const intervalStart = MidiNumbers.fromNote("c3");
   const intervalEnd = MidiNumbers.fromNote("e5");
 
