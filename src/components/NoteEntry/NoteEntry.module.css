@@ -8,6 +8,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .addNotes {
@@ -39,6 +41,7 @@
   color: white;
   padding: var(--padding-box);
   transition: 0.15s ease-in-out;
+  text-wrap: nowrap;
 }
 
 .addNotes button svg {
@@ -55,14 +58,18 @@
 .annotations > button {
   outline: none;
   border: none;
-  margin-left: 10px;
+  margin-right: 10px;
   padding: var(--padding-box);
   background-color: var(--spotify-color);
   color: white;
   border-radius: 5px;
-  transition: 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out;
   cursor: pointer;
-  font-size: var(--size-small);
+  font-size: var(--size-medium);
+}
+
+.annotations > button:last-of-type {
+  margin-right: 0;
 }
 
 .addButton {
@@ -81,4 +88,10 @@
 .clearButton:hover {
   background-color: var(--remove-color);
   color: white;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }

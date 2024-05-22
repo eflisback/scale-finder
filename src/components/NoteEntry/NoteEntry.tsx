@@ -71,15 +71,16 @@ export default function NoteEntry({ notes, setNotes }: IProps) {
               }
             }}
           />
-
-          <button onClick={addNote} className={styles.addButton}>
-            Add note
-            <IoMdAdd />
-          </button>
-          <button onClick={clearInput} className={styles.clearButton}>
-            Clear input
-            <IoMdRemove />
-          </button>
+          <div className={styles.buttons}>
+            <button onClick={addNote} className={styles.addButton}>
+              Add note
+              <IoMdAdd />
+            </button>
+            <button onClick={clearInput} className={styles.clearButton}>
+              Clear input
+              <IoMdRemove />
+            </button>
+          </div>
         </div>
         <div className={styles.annotations}>
           {notes.map((note) => {
