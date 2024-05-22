@@ -13,7 +13,7 @@
   --size-medium: 20px;
   --size-small: 14px;
 
-  --standard-padding: 325px;
+  --padding-large: 100px;
 }
 
 * {
@@ -31,6 +31,8 @@ main {
   width: 100%;
   display: flex;
   flex-direction: column;
+
+  font-size: var(--size-medium);
 }
 
 main > section {
@@ -40,7 +42,7 @@ main > section {
 }
 
 main > section > * {
-  padding: 0 var(--standard-padding);
+  padding: 0 var(--padding-large);
 }
 
 h3 {
@@ -51,4 +53,59 @@ h3 svg {
   position: relative;
   top: 2px;
   margin-right: 5px;
+}
+
+/* Small phones */
+@media only screen and (max-width: 600px) {
+  :root {
+    --padding-large: 50px;
+
+    --size-large: 30px;
+    --size-medium: 12px;
+    --size-small: 8px;
+  }
+}
+
+/* Large phones */
+@media only screen and (min-width: 600px) {
+  :root {
+    --padding-large: 100px;
+
+    --size-large: 35px;
+    --size-medium: 14px;
+    --size-small: 10px;
+  }
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) {
+  :root {
+    --padding-large: 175px;
+
+    --size-large: 45px;
+    --size-medium: 17px;
+    --size-small: 10px;
+  }
+}
+
+/* Small desktops & laptops */
+@media only screen and (min-width: 992px) {
+  :root {
+    --padding-large: 250px;
+
+    --size-large: 45px;
+    --size-medium: 17px;
+    --size-small: 12px;
+  }
+}
+
+/* Large desktops and laptops */
+@media only screen and (min-width: 1200px) {
+  :root {
+    --padding-large: 325px;
+
+    --size-large: 50px;
+    --size-medium: 16px;
+    --size-small: 13px;
+  }
 }

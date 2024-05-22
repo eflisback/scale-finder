@@ -4,7 +4,7 @@
   margin-top: 20px;
   border-top: 1px solid var(--spotify-color);
   color: lightgrey;
-  padding: 35px var(--standard-padding);
+  padding: 35px var(--padding-large);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -54,7 +54,7 @@
   font-family: "VT323", monospace;
   font-weight: 400;
   font-style: normal;
-  font-size: 24px;
+  font-size: calc(var(--size-large) / 2);
 }
 
 #center {
