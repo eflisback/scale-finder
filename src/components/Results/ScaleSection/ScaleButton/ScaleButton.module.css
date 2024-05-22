@@ -1,6 +1,12 @@
 .scale {
+  outline: none;
+  border: none;
+  background-color: unset;
+  color: inherit;
+  font-size: var(--size-medium);
+
   margin: 5px;
-  padding: 5px 15px;
+  padding: var(--padding-box);
   width: fit-content;
   height: fit-content;
   border: 1px solid var(--spotify-color);
