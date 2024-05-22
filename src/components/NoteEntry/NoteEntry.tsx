@@ -2,8 +2,9 @@ import styles from "./NoteEntry.module.css";
 
 import { useState } from "react";
 import { getNoteAnnotation, getNoteValue } from "../../util/translateNotes";
-import { IoIosMusicalNotes, IoMdAdd, IoMdRemove } from "react-icons/io";
+import { IoIosMusicalNotes, IoMdAdd } from "react-icons/io";
 import { NOTES } from "../../variables";
+import { RxCross2 } from "react-icons/rx";
 
 interface IProps {
   notes: number[];
@@ -39,10 +40,6 @@ export default function NoteEntry({ notes, setNotes }: IProps) {
     setNotes((prevNotes) => prevNotes.filter((n) => n !== note));
   }
 
-  function clearInput() {
-    setNotes([]);
-  }
-
   return (
     <div className={styles.noteEntry}>
       <h3>
@@ -71,22 +68,17 @@ export default function NoteEntry({ notes, setNotes }: IProps) {
               }
             }}
           />
-          <div className={styles.buttons}>
-            <button onClick={addNote} className={styles.addButton}>
-              Add note
-              <IoMdAdd />
-            </button>
-            <button onClick={clearInput} className={styles.clearButton}>
-              Clear input
-              <IoMdRemove />
-            </button>
-          </div>
+          <button onClick={addNote} className={styles.addButton}>
+            Add note
+            <IoMdAdd />
+          </button>
         </div>
         <div className={styles.annotations}>
           {notes.map((note) => {
             const annotation = getNoteAnnotation(note);
             return (
               <button key={note} onClick={() => removeNote(note)}>
+                <RxCross2 className={styles.cross} />
                 <span>{annotation[0]}</span>
                 {annotation.length === 3 ? <span>, {annotation[2]}</span> : ""}
               </button>
