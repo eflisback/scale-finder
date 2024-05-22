@@ -14,6 +14,8 @@
   --size-small: 14px;
 
   --padding-large: 100px;
+  --padding-medium: 35px;
+  --padding-box: 5px 15px;
 }
 
 * {
@@ -59,6 +61,7 @@ h3 svg {
 @media only screen and (max-width: 600px) {
   :root {
     --padding-large: 50px;
+    --padding-box: 5px 10px;
 
     --size-large: 30px;
     --size-medium: 12px;
@@ -70,6 +73,7 @@ h3 svg {
 @media only screen and (min-width: 600px) {
   :root {
     --padding-large: 100px;
+    --padding-box: 5px 12px;
 
     --size-large: 35px;
     --size-medium: 14px;
@@ -81,6 +85,7 @@ h3 svg {
 @media only screen and (min-width: 768px) {
   :root {
     --padding-large: 175px;
+    --padding-box: 6px 13px;
 
     --size-large: 45px;
     --size-medium: 17px;
@@ -92,6 +97,7 @@ h3 svg {
 @media only screen and (min-width: 992px) {
   :root {
     --padding-large: 250px;
+    --padding-box: 6px 14px;
 
     --size-large: 45px;
     --size-medium: 17px;
@@ -103,6 +109,7 @@ h3 svg {
 @media only screen and (min-width: 1200px) {
   :root {
     --padding-large: 325px;
+    --padding-box: 7px 15px;
 
     --size-large: 50px;
     --size-medium: 16px;
