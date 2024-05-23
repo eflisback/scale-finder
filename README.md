@@ -10,7 +10,7 @@ Hi! I'm Ebbe, a software engineering student from Sweden who also dabbles in mus
 
 - **Modern Interface**: Built with React, Scale Finder offers a sleek and user-friendly interface.
 - **Accurate Detection**: Uses some pretty nifty algorithms to accurately detect music scales.
-- **Responsive Design**: Works seamlessly on desktop.
+- **Responsive Design**: Works well on desktop, tablet and mobile devices.
 
 ## Installation
 
@@ -24,7 +24,7 @@ npm install
 
 ## Contributions
 
-Got ideas or found a bug? Awesome! Feel free to fork the repo and submit a pull request. If you run into any issues or have suggestions, just open an issue on GitHub.
+Got ideas or found a bug? Feel free to fork the repo and submit a pull request. If you run into any issues or have suggestions, just open an issue here on GitHub.
 
 ## License
 
