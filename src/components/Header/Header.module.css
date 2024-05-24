@@ -7,7 +7,7 @@
   font-family: "VT323", monospace;
   font-weight: 400;
   font-style: normal;
-  color: white;
+  color: var(--primary-color);
 }
 
 .credits {
@@ -18,7 +18,7 @@
   background: -webkit-linear-gradient(
     45deg,
     var(--spotify-color),
-    var(--no-match-color),
+    #bda95c,
     var(--remove-color)
   );
   background-clip: text;

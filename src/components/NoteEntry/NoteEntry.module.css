@@ -25,8 +25,8 @@
   background-color: transparent;
   border-radius: 5px;
 
-  color: white;
-  border: 1px solid white;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
   text-align: left;
   padding: var(--padding-box);
   font-size: var(--size-medium);
@@ -40,7 +40,7 @@
   border-radius: 5px;
   cursor: pointer;
 
-  color: white;
+  color: var(--primary-color);
   padding: var(--padding-box);
   transition: 0.15s ease-in-out;
   text-wrap: nowrap;

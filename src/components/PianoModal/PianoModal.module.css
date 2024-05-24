@@ -13,12 +13,11 @@
 
 .modal {
   padding: 20px;
-  background-color: #262626;
+  background-color: var(--contrast-color);
   display: flex;
   flex-direction: column;
-  border-right: 1px solid white;
-  border-left: 1px solid white;
   width: 600px;
+  color: var(--secondary-color);
 }
 
 .header {
@@ -27,6 +26,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
+  color: var(--primary-color);
 }
 
 .header h3 {
@@ -67,7 +67,7 @@
   border: none;
   padding: var(--padding-box);
   border: 1px solid var(--spotify-color);
-  color: white;
+  color: var(--primary-color);
   border-radius: 5px;
   transition: 0.15s ease-in-out;
   font-size: var(--size-small);

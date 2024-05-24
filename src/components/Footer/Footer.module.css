@@ -3,7 +3,7 @@
 .footer {
   margin-top: 20px;
   border-top: 1px solid var(--spotify-color);
-  color: lightgrey;
+  color: var(--secondary-color);
   padding: 35px var(--padding-large);
   display: flex;
   flex-direction: row;
@@ -16,7 +16,7 @@
 }
 
 .footer a:hover {
-  color: white;
+  color: var(--primary-color);
 }
 
 .linkList {
@@ -50,7 +50,7 @@
 
 .title {
   font-weight: bold;
-  color: white;
+  color: var(--primary-color);
   font-family: "VT323", monospace;
   font-weight: 400;
   font-style: normal;
